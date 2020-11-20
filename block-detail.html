@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TGCC Explorer - Block Detail</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="bitcoin, ethereum, monero, ico, token, free token, btc, eth" />
+    <meta name="author" content="TGCC" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- Bootstrap & Plugins CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/purple.css" rel="stylesheet" type="text/css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="assets/css/public.css">
+
+</head>
+
+<body>
+
+    <div class="loading-wrapper">
+        <div class="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+
+                            <img src="assets/images//logos/logo.png" class="light-logo" alt="TGCC CHAIN" />
+                            <img src="assets/images/logos/logo.png" class="dark-logo" alt="TGCC CHAIN" />
+                        </a>
+                        <!-- ***** Logo End ***** -->
+
+                        <!-- ***** Lang Start ***** -->
+                        <div class="lang">
+                            <div class="selected">
+                                <img src="assets/images/flags/china.png" alt="">
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <!-- <select class="trans-en">
+									<option value="简体中文">简体中文</option>
+									<option value="English">English</option>
+								</select> -->
+
+                            <ul class="flag-list trans-en">
+
+                                <li class="chinese-language">
+                                    <a href="#">
+                                        <img src="assets/images/flags/china.png" alt="">
+                                        <span>简体中文</span>
+                                    </a>
+                                </li>
+                                <li class="english-language">
+                                    <a href="#">
+                                        <img src="assets/images/flags/en.png" alt="">
+                                        <span>English</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- ***** Lang End ***** -->
+
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li>
+                                <a href="index.html">
+                                    <span i18n="i18n.themselves">首页</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="wallet-list.html">
+                                    <span i18n="i18n.successful-case">钱包</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="transaction-list.html">
+                                    <span i18n="i18n.Intelligence-test">交易</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="block-list.html">
+                                    <span i18n="i18n.evaluation">区块</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Wellcome Area Start ***** -->
+    <section class="block-explorer-wrapper bg-bottom-center" id="welcome-1">
+        <div class="block-explorer text">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-12 align-self-center">
+                        <h1 i18n="i18n.Block browser">区块浏览器</h1>
+                    </div>
+                    <div class="offset-lg-3 col-lg-6">
+                        <div style="display: flex;
+                        justify-content: center;">
+                            <p i18n="i18n.LatestBlockID">最新区块: </p><span style="padding-top: 2px;" class="latestBlockOfHead color-fff"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-wrapper">
+                            <div class="input">
+                                <input type="text" id="findContent" class="search-box" i18n="i18n.Please enter what you are looking for" placeholder="请输入您想查找的内容.">
+
+                                <button class="search-btn"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Wellcome Area End ***** -->
+
+
+
+
+    <section class="block-explorer-features section pt-5 pb-0  mt-5">
+
+    </section>
+
+    <!-- 热门钱包 -->
+    <section class="section bg-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <p class="section-title" i18n="i18n.evaluationID">区块详情</p>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p id="blockId">ID :-- </p>
+                        <button type="button" class="btn btn-secondary btn-small copy-button" id="blockIdCopyBtn"> <span i18n="i18n.copy">复制</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- table Start -->
+            <section class="block-explorer-section section p-0 m-0">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="">
+                                <table class="table table-striped table-latests table-responsive-stack alert-warning">
+                                    <!-- <thead>
+                            <tr>
+                                <td i18n="i18n.class">等级</td>
+                                <td i18n="i18n.site">地址</td>
+                                <td i18n="i18n.balance">余额</td>
+                                <td i18n="i18n.publish">发行</td>
+
+                            </tr>
+                        </thead> -->
+                                    <!-- 列表渲染 -->
+                                    <tbody class="tbody-style" id="blockInfo">
+                                        <tr>
+                                            <td>高度</td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td>时间戳</td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td>交易</td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td>总费用</td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td>总金额</td>
+                                            <td>--</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 翻页 -->
+                    <!-- <div>
+
+                    </div>
+                    <div class="clickBlock">
+                        <div class="leftBlock">
+                            <p i18n="i18n.previous page " class="blockPage">上一个区块</p>
+                        </div>
+                        <div class="rightBlock">
+                            <p i18n="i18n.next page " class="nextPage">下一个区块</p>
+                        </div>
+                    </div> -->
+            </section>
+            <!-- table End -->
+
+
+            </div>
+    </section>
+    <!-- ***** Contact & Footer Start ***** -->
+    <footer id="contact">
+        <div class="footer-bottom slim">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="copyright">2019 © by TGCC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Contact & Footer End ***** -->
+
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="./assets/js/jquery.i18n.properties.min.js"></script>
+    <!-- dbData -->
+    <script src="assets/js/dbData.js"></script>
+
+
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/page.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/jquery.downCount.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/particle-purple.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- jquery.i18n.js -->
+
+    <script src="assets/js/jquery.i18n.js"></script>
+    <script src="assets/layui/layui.all.js"></script>
+
+
+    <script src="assets/js/clipboard.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        //初始化数据+自动加载
+        $(function() {
+            var blockId = localStorage.getItem("blockId");
+            var BURL = 'http://124.70.148.13:4103/api/'
+                // 最新区链
+            $.ajax({
+                type: "GET",
+                contentType: "application/json;charset=UTF-8",
+                url: BURL + `v2/blocks/${blockId}`,
+            }).done(res => {
+                console.log(res.data);
+                var blockId = res.data.id;
+                $("#blockId").html("ID：" + blockId);
+                $("#blockIdCopyBtn").attr('aria-label', blockId);
+
+                function p(s) {
+                    return s < 10 ? '0' + s : s
+                }
+                var d = new Date(res.data.timestamp.human)
+                var datetime = d.getFullYear() + '-' + p((d.getMonth() + 1)) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+
+                var blockInfo = "";
+                blockInfo = `
+                <tr>
+
+                    <td i18n="i18n.altitude">高度</td>
+                    <td>${res.data.height}</td>
+
+                    </tr>
+                    <tr>
+                    <td i18n="i18n.timestamp">时间戳</td>
+                    <td>${datetime}</td>
+
+                    </tr>
+                    <tr>
+                    <td i18n="i18n.transaction">交易</td>
+                    <td>${res.data.transactions}</td>
+
+
+                    </tr>
+                    <tr>
+                
+
+
+                    </tr>
+                    <tr>
+                    <td i18n="i18n.service charge">总费用</td>
+                    <td>${res.data.forged.fee / Math.pow(10, 8).toFixed(2)}T</td>
+
+                </tr>
+
+                <tr>
+                    <td i18n="i18n.processamount">产出数量</td>
+                    <td>${res.data.forged.total / Math.pow(10, 8).toFixed(2)}T</td>
+
+                </tr>
+                                    `
+                $("#blockInfo").html(blockInfo);
+
+                $.refreshLang();
+
+            }).fail(err => {
+                console.log(err);
+            })
+
+
+
+
+
+
+            var a = 1;
+            $(".blockPage").click(function() {
+
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json;charset=UTF-8",
+                    // url: BURL+`v2/blocks?page=${(a-- < a) ? a : a--}&limit=1`,
+                    url: BURL + `v2/blocks?page=3&limit=1`,
+                }).done(res => {
+                    console.log(res.data);
+                    console.log(res.meta);
+                }).fail(err => {
+                    console.log(err);
+                })
+            });
+
+
+
+            $(".nextPage").click(function() {
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json;charset=UTF-8",
+                    // url: BURL+`v2/blocks?page=${a++}&limit=1`,
+                    url: BURL + `v2/blocks?page=2&limit=1`,
+                }).done(res => {
+                    console.log(res.data);
+                    var blockId = res.data[0].id;
+
+                    $.ajax({
+                        type: "GET",
+                        contentType: "application/json;charset=UTF-8",
+                        url: BURL + `v2/blocks/${blockId}`,
+                    }).done(res => {
+                        console.log(res.data);
+                        var blockId = res.data.id;
+
+                        function p(s) {
+                            return s < 10 ? '0' + s : s
+                        }
+                        var d = new Date(res.data.timestamp.human)
+                        var datetime = d.getFullYear() + '-' + p((d.getMonth() + 1)) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+                        $("#blockId").html("ID：" + blockId);
+                        var blockInfo = "";
+                        blockInfo = `
+                <tr>
+
+                    <td><span i18n="i18n.altitude>高度</span></td>
+                    <td>${res.data.height}</td>
+
+                    </tr>
+                    <tr>
+                    <td>时间戳</td>
+                    <td>${datetime}</td>
+
+                    </tr>
+                    <tr>
+                    <td>交易</td>
+                    <td>${res.data.transactions}</td>
+
+
+                    </tr>
+                    <tr>
+                    <td>奖励</td>
+                    <td>${res.data.forged.reward}T</td>
+
+
+                    </tr>
+                    <tr>
+                    <td>总费用</td>
+                    <td>${res.data.forged.total}T</td>
+
+                </tr>
+
+                <tr>
+                    <td>总金额</td>
+                    <td>${res.data.forged.total}T</td>
+
+                </tr>
+                                    `
+                        $("#blockInfo").html(blockInfo);
+
+                    }).fail(err => {
+                        console.log(err);
+                    })
+
+
+                }).fail(err => {
+                    console.log(err);
+                })
+
+            });
+
+
+        })
+    </script>
+    <!--  -->
+</body>
+
+</html>

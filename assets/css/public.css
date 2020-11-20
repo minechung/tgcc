@@ -1,0 +1,179 @@
+		.page-item.active .page-link {
+		    z-index: 1;
+		    color: #fff;
+		    background-color: #f28d03;
+		    background-image: linear-gradient(to right, #f77300, #ffd288);
+		    border-color: #fff8e9;
+		}
+		
+		.page-link {
+		    position: relative;
+		    display: block;
+		    padding: .5rem .75rem;
+		    margin-left: -1px;
+		    line-height: 1.25;
+		    color: #f28d03;
+		    background-color: #fff8e9;
+		    border: 1px solid #dee2e6;
+		}
+		
+		.page-link:hover {
+		    color: #ffffff;
+		    text-decoration: none;
+		    background-color: #f28e02;
+		    border-color: #f69600;
+		}
+		
+		.pagination-sm .page-link {
+		    padding: .6rem 1rem;
+		    font-size: .875rem;
+		    line-height: 1.5;
+		}
+		
+		.block-explorer-features .item .title .icon1:after {
+		    content: '';
+		    position: absolute;
+		    width: 18px;
+		    height: 18px;
+		    bottom: 116px;
+		    left: 42px;
+		    border: 2px solid #F76700;
+		    z-index: 1;
+		    -webkit-border-radius: 100px;
+		    -moz-border-radius: 100px;
+		    border-radius: 100px;
+		}
+		
+		.block-explorer-section .table-latests tbody .table-progress .progress-line {
+		    position: absolute;
+		    width: 0%;
+		    height: 15px;
+		    background: #f77300;
+		    background-image: linear-gradient(to right, #f77300, #ffd288);
+		    -webkit-border-radius: 100px;
+		    -moz-border-radius: 100px;
+		    border-radius: 100px;
+		}
+		
+		.block-explorer-features .item .title .icon:before {
+		    content: '';
+		    background: #f76c01;
+		    width: 18px;
+		    height: 18px;
+		    left: -8px;
+		    top: 18px;
+		}
+		
+		.clickBlock {
+		    display: flex;
+		    justify-content: center;
+		    padding-top: 20px;
+		}
+		
+		.leftBlock {
+		    border: 1px solid darkgray;
+		    height: 33px;
+		    border-radius: 4px;
+		    padding: 2px 10px;
+		    background: linear-gradient(to right, #F76600, #FDA900);
+		    margin-left: 18px;
+		    border: none;
+		    color: #fff;
+		}
+		
+		.rightBlock {
+		    border: 1px solid darkgray;
+		    height: 33px;
+		    border-radius: 4px;
+		    padding: 2px 10px;
+		    background-color: darkgray;
+		    margin-left: 18px;
+		    border: none;
+		    color: #fff;
+		}
+
+		.color-fff{
+			color: #fff;
+		}
+
+		td.transactions-id-de {
+			cursor: pointer;
+	}
+
+	td>a{
+		cursor: pointer;
+	}
+
+	/**
+	loading
+	**/
+
+	.loading-wrapper {
+		    background-image: linear-gradient(134deg, #f76600 0%, #fda900 100%) !important;
+	}
+
+	.copy-button {
+		height: 24px;
+		line-height: 12px;
+		font-size: 12px;
+	}
+
+	#transactionID, #blockId {
+		padding: 0 20px;
+    	word-break: break-word;
+    	margin-bottom: 5px;
+	}
+
+	.block-explorer-section .table-latests.table-detail td {
+		padding-left: 20px!important;
+		padding-right: 20px!important;
+	}
+
+	/**
+	表格自适应
+	**/
+
+
+@media screen and (max-width: 768px) {
+
+
+	.table-responsive-stack tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+
+.table-responsive-stack td,
+.table-responsive-stack th {
+   display:block;
+/*      
+   flex-grow | flex-shrink | flex-basis   */
+   -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.table-responsive-stack .table-responsive-stack-thead {
+   font-weight: bold;
+}
+
+   .table-responsive-stack tr {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      border-bottom: 3px solid #ccc;
+      display:block;
+      
+   }
+   /*  IE9 FIX   */
+   .table-responsive-stack td {
+      float: left\9;
+      width:100%;
+      padding-top: 15px!important;
+   }
+}
